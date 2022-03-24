@@ -9,6 +9,15 @@
 # get the current path where you'll execute the script
 $dir="$PWD"
 
+$nametable = @{
+    pptx='Presentations';
+    docx='Word Docs';
+    txt='Text Files';
+    mp4='MP4 Video Files';
+    mp3='MP3 Audio Files';
+    wav='WAV Audio Files';
+}
+
 # store all filenames in an array
 $file_list=( $(ls $dir) )
 
@@ -26,11 +35,23 @@ ForEach ($f in $file_list)
             # get the extension
 			$ext=	((Split-Path "$f.Extension" -Leaf).Split('.'))[1]
 
+            $tmp=''
+
+            if ($nametable.ContainsKey($ext))
+            {
+                $tmp = $nametable.$ext
+            }
+            else
+            {
+                $tmp = $ext
+            }
+            
+
             # create the dir with ext as dir name
-			mkdir -p "$PWD\$ext" -Force
+			mkdir -p "$PWD\$tmp" -Force
 
             # move the file in that directory
-			mv $f "$PWD\$ext" -Force
+			mv $f "$PWD\$tmp" -Force
 		}
 	}
 
