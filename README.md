@@ -34,5 +34,8 @@ In this case, OrdinaPS doesn't touch files with extension *bmp, rar or zip*.
     - Added config file for blacklisted extension
     - Added Remove from contex menu option.
 
+## Bugs
+- If a file contain square brackets ` [ ] ` in its name, the script don't recognise it. (*Issue [#3](https://github.com/giuscond/OrdinaPS/issues/3)*)
+
 -----
 Made by giuscond - https://giuscond.com
