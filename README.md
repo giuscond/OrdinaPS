@@ -1,6 +1,7 @@
 # OrdinaPS, a Windows Powershell script
-It sorts your files each in a folder named as its extension.
+It sorts all your files each in a folder named as its extension. For example, it moves all jpg in jpg folder. Files without extension remain the main folder.
 It's very helpful to sort Download folder.
+
 
 Inspired by [this reddit thread](https://www.reddit.com/r/unixporn/comments/tks369/oc_wrote_a_simple_python_script_to_organize_messy/)
 
