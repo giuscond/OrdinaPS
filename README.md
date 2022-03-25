@@ -11,31 +11,46 @@ Alternatively you can integrate it on Windows ontext menu:
 1. Move OrdinaPS.ps1 in a script folder
 2. Set an Enviroment Variable named "Scripts" (a googled tutorial [here](https://turbolab.it/windows-10/guida-windows-10-come-modificare-variabile-sistema-path-aggiungere-cartella-percorso-directory-variabile-ambiente-2560))
 3. Open Add-to-context-menu.reg file 
+4. Customize the config file if you want custom folder names
 
 Enjoy!
 
 ## Config
-In the last version I add a configuration file called `ordinaps.conf`. It's a simple text file (you can edit it with notepad); you can write each line a file extension that you want blacklisted.
+There are a configuration file called `ordinaps.ini`.
+You can customize behavior of OrdinaPS.
+In blacklist section you can choose specific file type that script should ignore. Every extension should be separate by a comma `,`
 
-For example, if I have this ordinaps.conf:
->bmp <br>
->rar<br>
->zip
+In Custom folder name sections you can choose a name for specific file type. Yuo can also use same folder name for differente extension.
 
-In this case, OrdinaPS doesn't touch files with extension *bmp, rar or zip*.
+### Blacklist example
+>blacklist=ini,ps1,zip
+
+It move all file except *ini* files, *ps1* and *zip* files.
+
+### Custom folder name example
+>pptx=Presentations<br>
+>ppt=Presentations<br>
+>docx=Word Docs
+
+In this case, every docx files will go in a folder called *"Word Docs"* instead the basic *"docx"* folder. Furthermore, pptx and ppt files will go in the same *"Presentations"* folder.
 
 
 ## Changelog
-- 0.1
-    - First Release
+- 0.3
+    - Added custom folder name for specific extensions (thanks to Xyphyn)
+    - Change configuration file structure
+    - Change configuration file type in *.ini
+    - Update README with config instructions
 - 0.2
     - Improved sintax (thanks to 123456IcanCount)
     - Removed `-Force option` (so if a file alredy exists, do not overwrite)
     - Added config file for blacklisted extension
     - Added Remove from contex menu option.
+- 0.1
+    - First Release
 
 ## Bugs
 - If a file contain square brackets ` [ ] ` in its name, the script don't recognise it. (*Issue [#3](https://github.com/giuscond/OrdinaPS/issues/3)*)
-
+- If there is a file called *.blacklist, you should change extension before use the script
 -----
 Made by giuscond - https://giuscond.com
