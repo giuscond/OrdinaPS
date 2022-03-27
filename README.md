@@ -1,7 +1,9 @@
 # OrdinaPS, a Windows Powershell script
 It sorts all your files each in a folder named as its extension. For example, it moves all jpg files in jpg folder. Files without extension remain in the main folder.
 
-[Example video](https://www.reddit.com/r/windows/comments/tm33ti/i_made_a_simple_powershell_script_to_organize/)
+[Example video #1](https://giuscond.com/blog/ordinaps/)
+[Example video #2](https://www.reddit.com/r/windows/comments/tm33ti/i_made_a_simple_powershell_script_to_organize/)
+[Example video #3](https://giuscond.com/blog/videos/ordinaps-demo.mp4)
 
 Inspired by [this reddit thread](https://www.reddit.com/r/unixporn/comments/tks369/oc_wrote_a_simple_python_script_to_organize_messy/)
 
@@ -36,21 +38,22 @@ In this case, every docx files will go in a folder called *"Word Docs"* instead 
 
 
 ## Changelog
+- 0.3.1
+    - Fix square brackets in file name bug (*Issue [#3](https://github.com/giuscond/OrdinaPS/issues/3)*) (thanks to *laurinschubert*)
 - 0.3
-    - Added custom folder name for specific extensions (thanks to Xyphyn)
+    - Added custom folder name for specific extensions (thanks to *Xyphyn*)
     - Change configuration file structure
     - Change configuration file type in *.ini
     - Update README with config instructions
 - 0.2
-    - Improved sintax (thanks to 123456IcanCount)
+    - Improved sintax (thanks to *123456IcanCount*)
     - Removed `-Force option` (so if a file alredy exists, do not overwrite)
     - Added config file for blacklisted extension
     - Added Remove from contex menu option.
 - 0.1
     - First Release
 
-## Bugs
-- If a file contain square brackets ` [ ] ` in its name, the script don't recognise it. (*Issue [#3](https://github.com/giuscond/OrdinaPS/issues/3)*)
+## Know Bugs
 - If there is a file called *.blacklist, you should change extension before use the script
 -----
 Made by giuscond - https://giuscond.com

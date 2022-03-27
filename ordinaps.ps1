@@ -1,7 +1,7 @@
 # OrdinaPS, a Windows Powershell script
 # It sorts your files each in a folder named as its extension
 #
-# v0.3
+# v0.3.1
 #
 # Made by giuscond
 # https://giuscond.com
@@ -33,7 +33,7 @@ ForEach ($f in $file_list)
 {
 	# check if f is a file or directory
 	# proceed if it's a file
-	if (Test-Path -Path $f -PathType Leaf )
+	if (Test-Path -LiteralPath $f -PathType Leaf )
 	{
         # check if file has extension
 		If ([bool]$f.Extension -eq $True)
@@ -71,7 +71,7 @@ ForEach ($f in $file_list)
 				mkdir -p "$PWD\$folder" -ErrorAction SilentlyContinue
 
 				# move the file in that directory
-				Move-Item $f "$PWD\$folder" -ErrorAction SilentlyContinue
+				Move-Item -LiteralPath $f "$PWD\$folder" -ErrorAction SilentlyContinue
 			}				
 			$black=0			
 		}
